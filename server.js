@@ -922,4 +922,4 @@ server.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
   console.log(`🔧 Dev Tools: bottom panel on project pages (⊕ button or Ctrl+Shift+T)`);
   console.log(`🔍 Quick inspect: Ctrl+Shift+I`);
-});
+}); 
