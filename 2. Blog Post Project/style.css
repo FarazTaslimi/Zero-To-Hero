@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Mukta, sans-serif;
+    font-weight: 400;
+    font-size: 1.66rem;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-color: #863ae8;
+    color: white;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.hero div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.hero p {
+    text-align: center;
+    word-spacing: 1px;
+    /* font-weight: 400; */
+}
+
+.hero hr {
+    margin-top: 16px;
+}
