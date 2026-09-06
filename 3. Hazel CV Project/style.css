@@ -123,7 +123,7 @@ nav a:active {
     background-color: white;
 }
 
-#blog-content {
+.post--rows {
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -149,7 +149,33 @@ nav a:active {
     color: gray;
 }
 
-#temp {
-    height: 100px;
-    background-color: magenta;
+.events {
+    background-color: #fdf0e6;
+    padding: 100px 260px;
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 48px;
+}
+
+.social-media-container {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.social-media {
+    width: 32px;
+    height: 32px;
+}
+
+footer span {
+    color: white;
+    font-size: 1.7rem;
 }
