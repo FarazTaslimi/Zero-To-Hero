@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Forum", serif;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Forum", serif;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f08e80;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+    font-size: 1.9rem;
+}
+
+nav a:link,
+nav a:hover,
+nav a:visited,
+nav a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.header-title {
+    font-size: 3rem;
+}
+
+.header-button {
+    background-color: white;
+    border: 1px solid #f08e80;
+    color: #f08e80;
+    padding: 16px 24px;
+    font-size: 1.6rem;
+    /* font-weight: 400; */
+    cursor: pointer;
+}
+
+.header-button:hover {
+    opacity: 0.8;
+}
+
+#header-button:link,
+#header-button:visited,
+#header-button:active,
+#header-button:hover {
+    color: #f08e80;
+    text-decoration: none;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 24px 260px;
+    width: 100%;
+}
+
+.bio {
+    font-size: 7.7rem;
+}
+
+.personal-information {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    align-items: start;
+}
+
+.row-tag {
+    width: 50%;
+    font-size: 3.25rem;
+}
+
+.row-content {
+    width: 50%;
+}
+
+#mission-content {
+    font-size: 3.25rem;
+}
+
+#specialties-content ul {
+    list-style: none;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-wrap: wrap;
+    height: auto;
+    max-height: calc(8rem + 72px);
+}
