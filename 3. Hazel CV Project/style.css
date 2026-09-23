@@ -1,17 +1,38 @@
-* {
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Forum", serif;
 }
 
+/* ==========================================================================
+   Root
+   ========================================================================== */
+
 :root {
     font-size: 62.5%;
 }
 
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Forum", serif;
+    overflow-x: hidden;
 }
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
 
 .hero {
     width: 100vw;
@@ -22,6 +43,8 @@ body {
     gap: 48px;
     color: white;
 }
+
+/* ----- Header ----- */
 
 header {
     display: flex;
@@ -70,6 +93,8 @@ nav a:active {
     text-decoration: none;
 }
 
+/* ----- Hero Content ----- */
+
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -81,6 +106,8 @@ nav a:active {
 .bio {
     font-size: 7.7rem;
 }
+
+/* ----- Personal Information ----- */
 
 .personal-information {
     display: flex;
@@ -118,6 +145,10 @@ nav a:active {
     max-height: calc(8rem + 72px);
 }
 
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+
 .blog {
     padding: 100px 260px 32px 260px;
     background-color: white;
@@ -149,10 +180,18 @@ nav a:active {
     color: gray;
 }
 
+/* ==========================================================================
+   Events
+   ========================================================================== */
+
 .events {
     background-color: #fdf0e6;
     padding: 100px 260px;
 }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
 footer {
     background-color: black;
@@ -178,4 +217,218 @@ footer {
 footer span {
     color: white;
     font-size: 1.7rem;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* ----- Huge desktops (up to 2559px) ----- */
+@media only screen and (max-width: 2559px) {
+    .hero-content {
+        padding: 24px 130px;
+    }
+
+    .blog {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
+
+    .events {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
+}
+
+/* ----- Desktops (up to 1439px) ----- */
+@media only screen and (max-width: 1439px) {
+    .hero-content {
+        padding: 0 80px;
+    }
+
+    .blog {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .events {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+/* ----- Small laptops & tablet landscape (up to 1024px) ----- */
+@media only screen and (max-width: 1024px) {
+    .hero-content {
+        padding: 0 48px;
+    }
+
+    .hero {
+        gap: 0;
+    }
+
+    .blog {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .events {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .bio {
+        font-size: 5.5rem;
+    }
+}
+
+/* ----- Tablet & mobile (up to 768px) — base overrides ----- */
+@media only screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 24px;
+    }
+
+    .row-tag {
+        align-self: flex-start;
+    }
+
+    .row-content {
+        width: 100%;
+    }
+
+    .bio {
+        font-size: 4.8rem;
+    }
+
+    .hero-content {
+        gap: 48px;
+    }
+
+    .blog {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* ----- Tablet & mobile (up to 768px) — full layout ----- */
+@media only screen and (max-width: 768px) {
+
+    /* Hero */
+    .hero {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        gap: 24px;
+    }
+
+    /* Header */
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 20px;
+    }
+
+    .header-title {
+        order: -1;
+        width: 100%;
+        text-align: center;
+        font-size: 2.8rem;
+    }
+
+    nav {
+        font-size: 1.6rem;
+        gap: 20px;
+    }
+
+    .header-button {
+        padding: 10px 20px;
+        font-size: 1.4rem;
+    }
+
+    /* Hero content */
+    .hero-content {
+        padding: 0 24px 32px;
+        gap: 48px;
+    }
+
+    .bio {
+        font-size: clamp(2.8rem, 8vw, 4.2rem);
+        line-height: 1.15;
+    }
+
+    /* Personal information */
+    .personal-information {
+        gap: 40px;
+    }
+
+    .row {
+        gap: 12px;
+    }
+
+    .row-tag {
+        font-size: 2.2rem;
+    }
+
+    #mission-content {
+        font-size: 1.8rem;
+        line-height: 1.55;
+    }
+
+    .row-content {
+        padding-left: 24px;
+    }
+
+    /* Specialties */
+    #specialties-content ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        font-size: 1.6rem;
+        max-height: none;
+    }
+
+    #specialties-content ul li {
+        flex: 0 0 calc(50% - 8px);
+    }
+
+    /* Blog */
+    .blog {
+        padding: 48px 24px 32px;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        font-size: 1.5rem;
+    }
+
+    .post-date {
+        font-size: 1.3rem;
+    }
+
+    /* Events */
+    .events {
+        padding: 48px 24px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 32px 20px;
+        gap: 12px;
+    }
+
+    .social-media {
+        width: 26px;
+        height: 26px;
+    }
+
+    footer span {
+        font-size: 1.4rem;
+    }
 }
