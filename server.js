@@ -26,14 +26,20 @@ const mimeTypes = {
 function checkResponsive(folderPath) {
   const cssPath = path.join(folderPath, 'style.css');
   if (!fs.existsSync(cssPath)) return 'desktop';
+
   try {
     const css = fs.readFileSync(cssPath, 'utf-8');
-    const has1024 = /@media\s*\([^)]*min-width\s*:\s*1024/i.test(css);
-    const has768 = /@media\s*\([^)]*min-width\s*:\s*768/i.test(css);
-    if (has1024) return 'all';
-    if (has768) return 'mobile-tablet';
+
+    // Remove CSS comments first so @media inside comments doesn't count
+    const cssWithoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+
+    // If there is ANY @media rule, show all 3 icons
+    const hasMediaQuery = /@media\b[^{]*\{/i.test(cssWithoutComments);
+
+    return hasMediaQuery ? 'all' : 'desktop';
+  } catch (e) {
     return 'desktop';
-  } catch (e) { return 'desktop'; }
+  }
 }
 
 function parseProjectFolders() {
