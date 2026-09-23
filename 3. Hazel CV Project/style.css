@@ -282,37 +282,7 @@ footer span {
     }
 }
 
-/* ----- Tablet & mobile (up to 768px) — base overrides ----- */
-@media only screen and (max-width: 768px) {
-    .row {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 24px;
-    }
-
-    .row-tag {
-        align-self: flex-start;
-    }
-
-    .row-content {
-        width: 100%;
-    }
-
-    .bio {
-        font-size: 4.8rem;
-    }
-
-    .hero-content {
-        gap: 48px;
-    }
-
-    .blog {
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
-}
-
-/* ----- Tablet & mobile (up to 768px) — full layout ----- */
+/* ----- Tablet & mobile (up to 768px) ----- */
 @media only screen and (max-width: 768px) {
 
     /* Hero */
@@ -366,20 +336,24 @@ footer span {
     }
 
     .row {
+        flex-direction: column;
+        align-items: flex-end;
         gap: 12px;
     }
 
     .row-tag {
+        align-self: flex-start;
         font-size: 2.2rem;
+    }
+
+    .row-content {
+        width: 100%;
+        padding-left: 24px;
     }
 
     #mission-content {
         font-size: 1.8rem;
         line-height: 1.55;
-    }
-
-    .row-content {
-        padding-left: 24px;
     }
 
     /* Specialties */
