@@ -1,4 +1,8 @@
-* {
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,6 +22,10 @@ body {
     flex-direction: column;
     gap: 24px;
 }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
 
 header {
     width: 100%;
@@ -56,12 +64,18 @@ li:first-child {
     text-decoration-color: black;
 }
 
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
 main {
     display: flex;
     flex-direction: column;
     padding: 0 32px;
     gap: 48px;
 }
+
+/* ----- Work Section ----- */
 
 #work {
     width: 100%;
@@ -77,13 +91,22 @@ main {
 }
 
 .card {
-    width: 49%;
+    width: 48%;
     height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     gap: 16px;
     position: relative;
+    flex: 1 1 auto;
+}
+
+.card:first-child {
+    border-right: 8px solid white;
+}
+
+.card:last-child {
+    border-left: 8px solid white;
 }
 
 .card--image {
@@ -111,12 +134,14 @@ main {
     font-size: 2.5rem;
 }
 
+/* ----- About Section ----- */
+
 #about {
     display: flex;
     flex-direction: column;
     gap: 48px;
-    margin-left: 150px;
-    font-size: 4.25rem;
+    margin-left: clamp(0px, 10vw, 150px);
+    font-size: clamp(2.4rem, 6vw, 4.25rem);
 }
 
 #about p {
@@ -130,11 +155,103 @@ main {
     text-decoration-thickness: 2px;
 }
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
 footer {
     display: flex;
     flex-direction: column;
-    /* gap: 4px; */
-    padding: 120px 32px;
-    margin-left: 150px;
+    padding: 60px 32px;
+    margin-left: clamp(0px, 10vw, 150px);
     font-size: 2rem;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* ----- Large screens (2560px and up) ----- */
+@media only screen and (min-width: 2560px) {
+    .card {
+        height: 900px;
+    }
+}
+
+/* ----- Laptops (769px – 1024px) ----- */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        height: 400px;
+    }
+
+    #about p {
+        width: 69%;
+    }
+}
+
+/* ----- Phones and tablets (up to 768px) ----- */
+@media only screen and (max-width: 768px) {
+    .card {
+        border: none !important;
+        width: 100%;
+        flex: 0;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    #about {
+        margin-left: 0;
+        font-size: clamp(2.4rem, 7vw, 3.5rem);
+    }
+
+    #about p {
+        width: 100%;
+    }
+
+    #about span {
+        text-underline-offset: 8px;
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 0 32px 24px 32px;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+}
+
+/* ----- Only phones (up to 425px) ----- */
+@media only screen and (max-width: 425px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    main {
+        padding: 0 8px;
+    }
+
+    footer {
+        padding: 80px 8px;
+    }
+
+    header {
+        padding-bottom: 16px;
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 0 24px 24px 24px;
+    }
+
+    #about {
+        padding: 0 16px;
+        margin-left: 0;
+    }
 }
