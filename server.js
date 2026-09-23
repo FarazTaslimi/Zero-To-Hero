@@ -34,7 +34,7 @@ function checkResponsive(folderPath) {
     const cssWithoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
 
     // If there is ANY @media rule, show all 3 icons
-    const hasMediaQuery = /@media\b[^{]*\{/i.test(cssWithoutComments);
+    const hasMediaQuery = /@media\b[^{]*\{/i.test(cssWithoutComments); 
 
     return hasMediaQuery ? 'all' : 'desktop';
   } catch (e) {
