@@ -1,8 +1,16 @@
-* {
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ==========================================================================
+   Root Variables
+   ========================================================================== */
 
 :root {
     font-size: 62.5%;
@@ -12,18 +20,29 @@
     --bg: #863ae8;
 }
 
+/* ==========================================================================
+   Base Elements
+   ========================================================================== */
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: Mukta, sans-serif;
     font-weight: 400;
     font-size: 1.66rem;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 hr {
     width: 100%;
     border: 1px solid gray;
 }
+
+/* ----- Headings ----- */
 
 h1,
 h2,
@@ -66,6 +85,8 @@ h6 {
     letter-spacing: 0.25px;
 }
 
+/* ----- Inline Code ----- */
+
 code {
     color: var(--text-primary);
     font-weight: bold;
@@ -75,15 +96,20 @@ p:not(.headline) code {
     font-size: 1.6rem;
 }
 
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
 .hero {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--bg);
     color: white;
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    padding: 0 96px;
 }
 
 .hero div {
@@ -107,12 +133,18 @@ p:not(.headline) code {
     box-shadow: -2px 0px 20px rgb(66, 66, 66);
 }
 
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/* ----- Blog Header ----- */
 
 header {
     display: flex;
@@ -135,6 +167,8 @@ header {
     color: var(--text-primary);
 }
 
+/* ----- Sections ----- */
+
 section {
     width: 50%;
     display: flex;
@@ -153,11 +187,15 @@ section ~ section {
     font-weight: 500;
 }
 
+/* ----- Articles ----- */
+
 article {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
+/* ----- Blockquote ----- */
 
 .quote {
     display: flex;
@@ -179,6 +217,10 @@ article {
     letter-spacing: normal;
     padding-left: 24px;
 }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
 footer {
     background-color: var(--bg);
@@ -207,4 +249,63 @@ footer ul li a:active {
 
 footer ul li a:hover {
     text-decoration: underline;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* ----- Large laptops (1025px – 1440px) ----- */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        width: 60%;
+    }
+}
+
+/* ----- Laptops (769px – 1024px) ----- */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    section {
+        width: 80%;
+    }
+}
+
+/* ----- Phones and tablets (up to 768px) ----- */
+@media only screen and (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+}
+
+/* ----- Only phones (up to 425px) ----- */
+@media only screen and (max-width: 425px) {
+    .hero {
+        align-items: center;
+        padding: 48px 32px;
+        height: 75dvh;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .hero div {
+        gap: 48px;
+    }
+
+    footer ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .quote {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* ----- Tablets (426px – 768px) ----- */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    footer li {
+        font-size: 1.2rem;
+    }
 }
