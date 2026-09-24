@@ -84,7 +84,7 @@ h1 {
 /* ----- Hamburger Button ----- */
 
 .hamburger-button {
-    display: none;
+    display: none !important;
     flex-direction: column;
     gap: 8px;
     position: relative;
@@ -265,7 +265,7 @@ footer {
     }
 
     .hamburger-button {
-        display: flex;
+        display: flex !important;
     }
 
     body {
