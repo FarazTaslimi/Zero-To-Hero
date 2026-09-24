@@ -1,5 +1,287 @@
-* {
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Root
+   ========================================================================== */
+
+:root {
+    font-size: 62.5%;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 68px;
+    gap: 68px;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
+}
+
+.header div:first-child {
+    gap: 16px;
+}
+
+.header div:last-child {
+    gap: 48px;
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+
+.header-span {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    padding: 4px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.header a:link,
+.header a:visited,
+.header a:active {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a img {
+    width: 2.4rem;
+}
+
+/* ----- Hamburger Button ----- */
+
+.hamburger-button {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 100000;
+}
+
+.hamburger-button-line {
+    width: 48px;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+    transition: transform 0.2s ease-in;
+}
+
+.line1 {
+    transform-origin: top left;
+}
+
+.line3 {
+    transform-origin: bottom left;
+}
+
+/* ==========================================================================
+   Project Grid
+   ========================================================================== */
+
+.project-grid {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+        "eth eth alphabet"
+        "eth eth traveler"
+        "astro cube traveler"
+        "astro cube traveler"
+        "cup insta insta"
+        "cup insta insta"
+        "foam foam dimensional"
+        "foam foam dimensional";
+    gap: 16px;
+}
+
+.project {
+    position: relative;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ----- Grid Areas ----- */
+
+#eth {
+    grid-area: eth;
+}
+
+#alphabet {
+    grid-area: alphabet;
+}
+
+#traveler {
+    grid-area: traveler;
+}
+
+#cube {
+    grid-area: cube;
+}
+
+#astro {
+    grid-area: astro;
+}
+
+#cup {
+    grid-area: cup;
+}
+
+#insta {
+    grid-area: insta;
+}
+
+#foam {
+    grid-area: foam;
+}
+
+#dimensional {
+    grid-area: dimensional;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.33rem;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* ----- Small laptops & large tablets (up to 1100px) ----- */
+@media only screen and (max-width: 1100px) {
+    .project-grid {
+        grid-template-areas: 
+            "eth eth"
+            "eth eth"
+            "alphabet traveler"
+            "astro cube"
+            "astro cube"
+            "insta insta"
+            "insta insta"
+            "cup foam"
+            "dimensional dimensional"
+            "dimensional dimensional"
+            "dimensional dimensional";
+    }
+
+    body {
+        padding: 68px 24px;
+    }
+}
+
+/* ----- Tablets portrait & phones (up to 768px) ----- */
+@media only screen and (max-width: 768px) {
+    .project-grid {
+        grid-template-areas:
+            "eth eth"
+            "alphabet alphabet"
+            "traveler traveler"
+            "astro cube"
+            "insta insta"
+            "cup cup"
+            "foam foam"
+            "dimensional dimensional";
+    }
+
+    .header div:last-child {
+        position: fixed;
+        height: calc(100dvh - 74px);
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        z-index: 100;
+        background-color: white;
+        box-shadow: 0 26px 25px rgba(0, 0, 0, 0.5);
+        transform: translateX(115px);
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        transition: transform 0.2s ease-out;
+    }
+
+    .hamburger-button {
+        display: flex;
+    }
+
+    body {
+        padding: 0 24px 32px 24px;
+        gap: 24px;
+    }
+
+    .header {
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+        background-color: white;
+    }
+
+    .open {
+        transform: translateX(0) !important;
+    }
 }
