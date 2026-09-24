@@ -257,7 +257,7 @@ footer {
         z-index: 100;
         background-color: white;
         box-shadow: 0 26px 25px rgba(0, 0, 0, 0.5);
-        transform: translateX(115px);
+        transform: translateX(calc(100% + 25px));
         align-items: center;
         justify-content: center;
         padding: 0 16px;
